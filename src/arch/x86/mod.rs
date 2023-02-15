@@ -44,9 +44,9 @@ mod tests {
       asm!(
         "
             xor eax, eax
-            je 1
+            je 1f
             mov eax, 2
-            jmp 2
+            jmp 2f
           1:
             mov eax, 5
           2:
@@ -103,7 +103,7 @@ mod tests {
     unsafe extern "C" fn external_loop() -> i32 {
       asm!(
         "
-            loop 1
+            loop 1f
             nop
             nop
             nop
