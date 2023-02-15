@@ -50,7 +50,7 @@ impl fmt::Display for Error {
       Error::AlreadyInitialized => write!(f, "Detour is already initialized"),
       Error::OutOfMemory => write!(f, "Cannot allocate memory"),
       Error::UnsupportedInstruction => write!(f, "Address contains an unsupported instruction"),
-      Error::RegionFailure(ref error) => write!(f, "{}", error),
+      Error::RegionFailure(ref error) => write!(f, "{error}"),
     }
   }
 }
