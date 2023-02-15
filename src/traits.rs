@@ -7,7 +7,11 @@
 /// detouring.
 pub unsafe trait Function: Sized + Copy + Sync + 'static {
   /// The argument types as a tuple.
+  #[cfg(feature = "nightly")]
   type Arguments: std::marker::Tuple;
+
+  #[cfg(not(feature = "nightly"))]
+  type Arguments;
 
   /// The return type.
   type Output;
